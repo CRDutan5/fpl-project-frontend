@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { PlayersProvider, usePlayers } from "./context/PlayersProvider";
+import MyPlayersList from "./components/MyPlayersList";
 
 const App = () => {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <PlayersProvider>
+      <MyPlayersList />
+    </PlayersProvider>
   );
 };
 
