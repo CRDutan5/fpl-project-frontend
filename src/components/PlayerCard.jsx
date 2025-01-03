@@ -25,8 +25,16 @@ export default function PlayerCard({ player }) {
     20: "Wolverhampton Wanderers",
   };
 
+  const positionHashmap = {
+    1: "Goalkeeper",
+    2: "Defender",
+    3: "Midfielder",
+    4: "Forward",
+  };
+
   return (
-    <Card style={{ width: "18rem", height: "100%" }} className="text-center">
+    // height: "100%"
+    <Card style={{ width: "18rem" }} className="text-center">
       <Card.Body className="d-flex flex-column justify-content-between">
         <Card.Text>
           {`${player.data.first_name} ${player.data.second_name}`}
@@ -38,10 +46,19 @@ export default function PlayerCard({ player }) {
       </Card.Body>
       <ListGroup className="flex-grow-1">
         <ListGroup.Item>{teamHashmap[player.data.team]}</ListGroup.Item>
-        <ListGroup.Item>Goals: {player.data.goals_scored}</ListGroup.Item>
+        <ListGroup.Item>
+          Position: {positionHashmap[player.data.element_type]}
+        </ListGroup.Item>
+
+        {/* <ListGroup.Item>Goals: {player.data.goals_scored}</ListGroup.Item>
         <ListGroup.Item>Assists: {player.data.assists}</ListGroup.Item>
-        <ListGroup.Item>Form: {player.data.form}</ListGroup.Item>
-        <ListGroup.Item>Cost: {player.data.now_cost}</ListGroup.Item>
+        <ListGroup.Item>Form: {player.data.form}</ListGroup.Item> */}
+        <ListGroup.Item
+          style={{ borderBottom: "none" }}
+          className="d-flex justify-content-center my-auto"
+        >
+          Cost: {player.data.now_cost}
+        </ListGroup.Item>
       </ListGroup>
     </Card>
   );
