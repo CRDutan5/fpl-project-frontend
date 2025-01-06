@@ -6,16 +6,20 @@ import { Link } from "react-router-dom";
 
 export default function UserNavbar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary mb-4">
-      <Container>
-        <Navbar.Brand href="#home">FPL Fantasy Analzyer</Navbar.Brand>
+    <Navbar expand="lg" className="bg-dark fw-semibold p-3">
+      <Container className="">
+        <Navbar.Brand href="#home" className="text-white">
+          FPL Fantasy Analzyer
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link as={Link} to="/" className="text-white">
               Home
             </Nav.Link>
-            <Nav.Link href="#link">Leagues</Nav.Link>
+            <Nav.Link href="#link" className="text-white">
+              Leagues
+            </Nav.Link>
             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -28,8 +32,11 @@ export default function UserNavbar() {
               </NavDropdown.Item>
             </NavDropdown> */}
           </Nav>
-          <Navbar.Text>
-            Signed in as: <a href="#login">Mark Otto</a>
+          <Navbar.Text className="text-white">
+            Signed in as:{" "}
+            <a href="#login" className="text-white">
+              Mark Otto
+            </a>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
